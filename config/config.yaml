@@ -1,0 +1,5 @@
+listen : :8080
+env: dev
+
+jwt:
+  secret: dGVzdFNlY3JldA==
