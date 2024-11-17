@@ -11,7 +11,11 @@ import (
 	"go.uber.org/fx"
 
 	_ "github.com/omnia-core/go-echo-template/docs"
+	userRouter "github.com/omnia-core/go-echo-template/internal/user/router"
+	userStore "github.com/omnia-core/go-echo-template/internal/user/store"
+	userUsecase "github.com/omnia-core/go-echo-template/internal/user/usecase"
 	"github.com/omnia-core/go-echo-template/pkg/config"
+	"github.com/omnia-core/go-echo-template/pkg/db"
 	"github.com/omnia-core/go-echo-template/pkg/log"
 	echoRouter "github.com/omnia-core/go-echo-template/pkg/router/echo"
 )
@@ -56,9 +60,14 @@ func main() {
 	app := fx.New(
 		fx.Provide(
 			config.New,
+			db.NewPostgresqlDB,
 			echoRouter.New,
+
+			userStore.NewUserStore,
+			userUsecase.NewUserUsecase,
 		),
 		fx.Invoke(
+			userRouter.NewUserRouter,
 			serve,
 		),
 	)

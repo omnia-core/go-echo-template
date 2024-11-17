@@ -20,8 +20,8 @@ type Config struct {
 	JWTConfig  JWTConfig `yaml:"jwt"`
 }
 
-func (c Config) GetTestDBConfig(name string, port int) Config {
-	return Config{
+func (c Config) GetTestDBConfig(name string, port int) *Config {
+	return &Config{
 		Postgresql: DBConfig{
 			Host:     "localhost",
 			User:     name,
