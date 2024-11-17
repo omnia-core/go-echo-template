@@ -1,14 +1,21 @@
+# Go REST API Template with Echo, GORM, and Fx
 
-# Go REST API Template with Echo
+This repository provides a boilerplate for building RESTful APIs using the following technologies:
 
-This repository provides a boilerplate for building RESTful APIs using the [Echo](https://echo.labstack.com/) framework in Go. It offers a structured project layout to facilitate scalable and maintainable application development.
+- [Echo](https://echo.labstack.com/): A lightweight and fast Go web framework for HTTP routing and middleware support.
+- [GORM](https://gorm.io/): The most popular Go ORM library for database interactions.
+- [Fx](https://github.com/uber-go/fx): A dependency injection framework for modular and scalable applications.
+
+It offers a structured project layout to facilitate scalable and maintainable application development.
 
 ---
 
 ## Features
 
 - **Domain-Driven Design**: The project separates interfaces and implementations by organizing interfaces in the `domain/` directory and their respective implementations in the `internal/` directory.
-- **Echo Framework**: Uses Echo for efficient HTTP routing and middleware support, enabling fast and lightweight REST API development.
+- **Echo Framework**: Efficient HTTP routing and middleware support for fast REST API development.
+- **GORM Integration**: Simplifies database access and ORM capabilities.
+- **Fx for Dependency Injection**: Provides modular DI, making it easier to manage complex dependencies.
 
 ---
 
@@ -95,7 +102,7 @@ Holds the implementation of the interfaces defined in the `domain/` directory.
 Subdirectories:
 - **`router/`**: Implements HTTP routes using the Echo framework.
 - **`usecase/`**: Contains business logic implementations.
-- **`store/`**: Implements data access (e.g., database queries).
+- **`store/`**: Implements data access (e.g., database queries) using GORM.
 
 ---
 
@@ -113,4 +120,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-Special thanks to the [Echo](https://echo.labstack.com/) framework community for their excellent work and contributions.
+Special thanks to the [Echo](https://echo.labstack.com/), [GORM](https://gorm.io/), and [Fx](https://github.com/uber-go/fx) communities for their excellent work and contributions.
+
